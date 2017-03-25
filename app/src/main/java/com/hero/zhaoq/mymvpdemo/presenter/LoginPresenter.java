@@ -16,7 +16,7 @@ import com.hero.zhaoq.mymvpdemo.view.interfas.ILoginView;
  * 实现逻辑业务
  *
  * 去登陆
- * 登录成功    失败回调
+ * 登录成功    失败回调   实现数据回调   并将回调数据返回  View
  */
 public class LoginPresenter implements ILoginPresenter,OnLoginFinishedListener {
 

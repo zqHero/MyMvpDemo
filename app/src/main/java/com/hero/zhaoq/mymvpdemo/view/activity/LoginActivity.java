@@ -18,6 +18,7 @@ import butterknife.OnClick;
 
 /**
  * 登录界面   view
+ * 实现  ILoginView Presenter 和 LoginActivity 通过接口交互。  并回调数据。
  */
 public class LoginActivity extends BaseActivity implements ILoginView{
 
