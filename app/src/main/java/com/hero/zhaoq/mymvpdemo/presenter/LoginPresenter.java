@@ -1,8 +1,9 @@
 package com.hero.zhaoq.mymvpdemo.presenter;
 
+import com.hero.zhaoq.mymvpdemo.modle.UserBean;
 import com.hero.zhaoq.mymvpdemo.presenter.interfas.ILoginPresenter;
 import com.hero.zhaoq.mymvpdemo.presenter.interfas.OnLoginFinishedListener;
-import com.hero.zhaoq.mymvpdemo.view.activity.LoginActivity;
+import com.hero.zhaoq.mymvpdemo.presenter.tasks.AsyncLoginTask;
 import com.hero.zhaoq.mymvpdemo.view.interfas.ILoginView;
 
 /**
@@ -39,8 +40,8 @@ public class LoginPresenter implements ILoginPresenter,OnLoginFinishedListener {
      */
     @Override
     public void iLoginPrToLogin(String username, String password) {
-        //执行 异步任务：  请求数据
-        task.validateCredentAsync(this,username,password);
+        //执行 异步任务：  请求数据   将this  作为监听器
+        task.validateCredentAsync(this,new UserBean(username,password));
     }
 
     @Override
@@ -52,6 +53,5 @@ public class LoginPresenter implements ILoginPresenter,OnLoginFinishedListener {
     public void onLoginFishedLisError() {
         view.iLoginViewFailed();
     }
-
 
 }
